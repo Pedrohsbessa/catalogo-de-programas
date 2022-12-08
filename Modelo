@@ -41,10 +41,10 @@ class Serie(Programa):
         return f'{self.nome} - {self.ano} - {self.likes} '
 
 
-class Playlist:
+class Playlist(list):
     def __init__(self, nome, programas):
         self.nome = nome
-        self.programas = programas
+        super().__init__(programas)
 
     def tamanho(self):
         return len(self.programas)
@@ -69,5 +69,5 @@ lista_de_programas = [vingadores, atlanta, demolidor, tmep]
 
 Lista_fim_de_semana = Playlist('Fim de Semana', lista_de_programas)
 
-for programas in Lista_fim_de_semana.programas:
+for programas in Lista_fim_de_semana:
     print(programas)
